@@ -4,4 +4,11 @@ https://www.nasdaq.com/market-activity/stocks/screener
 
 
 ## Mysql
-mysql.server status
+- Fuzzy search 
+- Pagination
+
+
+
+## Spring
+- Spring boot
+- JdbcTemplate

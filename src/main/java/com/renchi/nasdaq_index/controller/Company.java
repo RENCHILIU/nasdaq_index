@@ -14,7 +14,15 @@ public class Company {
   private long volume;
   private String sector;
   private String industry;
+  private String nasdaqUrl;
 
+  public String getNasdaqUrl() {
+    return nasdaqUrl;
+  }
+
+  public void setNasdaqUrl(String nasdaqUrl) {
+    this.nasdaqUrl = nasdaqUrl;
+  }
 
   public String getSymbol() {
     return symbol;

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/company")
 public class CompanyDetailController {
@@ -15,11 +17,14 @@ public class CompanyDetailController {
     @Value("${spring.datasource.url}")
     String dbUrl;
 
+
     @Autowired
     CompanyDetailRepository companyDetailRepository;
 
+    //debug
+    //TODO: add profile support
 
-    @GetMapping("/list")
+    @GetMapping("/test")
     void test() {
         System.out.println(dbUrl);
     }
@@ -29,10 +34,20 @@ public class CompanyDetailController {
         return companyDetailRepository.getCompanyAAPL();
     }
 
+    //Search
+    //TODO: combine all search endpoint with one switch
+
     @GetMapping("/detail")
     Company getCompanyDetailByName(@RequestParam String name) {
         return companyDetailRepository.getCompanyByName(name);
     }
+
+    @GetMapping("/search")
+    List<Company> searchCompanyDetail(@RequestParam(name = "query") String text, @RequestParam(required = false, defaultValue = "10") String limit) {
+        //TODO: input checking
+        return companyDetailRepository.searchCompanyWithText(text, limit);
+    }
+
 
 
 }
