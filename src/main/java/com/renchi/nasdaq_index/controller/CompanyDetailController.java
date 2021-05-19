@@ -44,7 +44,8 @@ public class CompanyDetailController {
 
     @GetMapping("/search")
     List<Company> searchCompanyDetail(@RequestParam(name = "query") String text, @RequestParam(required = false, defaultValue = "10") String limit) {
-        //TODO: input checking
+        //TODO: input validation
+        //TODO: add search @service and handle short search and long search
         return companyDetailRepository.searchCompanyWithText(text, limit);
     }
 
