@@ -1,0 +1,7 @@
+create table Watchlist
+(
+Watchlist_ID INT not null,
+watchlist_Name VARCHAR(256),
+user_ID VARCHAR(256),
+JSON_MSG TEXT
+);
