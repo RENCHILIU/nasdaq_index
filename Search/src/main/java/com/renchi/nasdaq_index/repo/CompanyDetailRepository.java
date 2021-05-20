@@ -56,6 +56,7 @@ class CompanyRowMapper implements RowMapper<Company> {
         c.setMarket_Cap(resultSet.getDouble("Market Cap"));
         c.setLast_Sale(resultSet.getString("Last Sale"));
         c.setNasdaqUrl("https://www.nasdaq.com/market-activity/stocks/" + symbolName);
+        c.setYahooUrl("https://finance.yahoo.com/quote/" + symbolName);
         return c;
     }
 }

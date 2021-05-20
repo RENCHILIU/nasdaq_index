@@ -13,6 +13,8 @@ public class WatchlistController {
     WatchlistRepo watchlistRepo;
 
     @PostMapping("/update")
+    //TODO: handling insert error
+    //TODO: create global exception
     public void updateWatchlist(@RequestBody Watchlist watchlist) {
         watchlistRepo.saveWatchlist(watchlist);
     }

@@ -15,6 +15,15 @@ public class Company {
   private String sector;
   private String industry;
   private String nasdaqUrl;
+  private String yahooUrl;
+
+  public String getYahooUrl() {
+    return yahooUrl;
+  }
+
+  public void setYahooUrl(String yahooUrl) {
+    this.yahooUrl = yahooUrl;
+  }
 
   public String getNasdaqUrl() {
     return nasdaqUrl;
